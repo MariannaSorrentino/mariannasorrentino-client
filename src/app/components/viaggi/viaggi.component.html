@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="col-md-7d-flex align-items-center justify-content-center">
+        <h1 class="display-4 special-font">{{contenuto.titolo}}</h1>
+        <hr class="my-4">    
+        <p class="lead" [innerHTML]="contenuto.corpo"></p>
+        <br>
+        <div class="card" style="width: 18rem;" *ngFor="let viaggio of viaggi">
+          <div class="card-body">
+            <h5 class="card-title special-font">{{viaggio.titolo}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted special-font">{{viaggio.sottoTitolo}}</h6> 
+            <!-- <p class="card-subtitle mb-2 text-muted">{{viaggio.destinazione}},
+            {{viaggio.partenza | date: 'dd/MM/yyyy'}} - {{viaggio.ritorno | date: 'dd/MM/yyyy'}}</p> -->
+            <hr class="my-4">    
+            <p class="card-text">{{viaggio.sommario}}</p>
+            <a class="btn btn-secondary btn-secondary" href="#" routerLink="{{viaggio.url}}">Entra</a>
+            <!-- <a class="card-link text-secondary" href="#" routerLink="{{viaggio.url}}">Entra</a>       -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <img class="card-img-top" src="{{contenuto.multimedia.url}}" alt="{{contenuto.multimedia.alt}}">
+      </div>
+      <div class="col-md-1 d-flex align-items-center justify-content-center">
+      </div>
+    </div>
+  </div>
